@@ -19,8 +19,8 @@ set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
 find_package(Qt5 COMPONENTS Core Widgets Gui Qml Quick REQUIRED)
 
-add_executable(Qt_NetCap Qt_GUI/sources/main.cpp Qt_GUI/headers/backend.h
-        Qt_GUI/sources/backend.cpp Qt_GUI/resources/main.qml Qt_GUI/resources/qml.qrc)
+add_executable(Qt_NetCap Qt_GUI/sources/main.cpp Qt_GUI/headers/DropRateSlider.h
+        Qt_GUI/sources/DropRateSlider.cpp Qt_GUI/resources/main.qml Qt_GUI/resources/qml.qrc Qt_GUI/sources/TextListModel.cpp Qt_GUI/headers/TextListModel.h Qt_GUI/headers/SharedVariables.h)
 
 target_link_libraries(Qt_NetCap
         Qt5::Core

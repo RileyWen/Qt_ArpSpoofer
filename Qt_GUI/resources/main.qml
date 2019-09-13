@@ -10,10 +10,6 @@ ApplicationWindow {
     visible: true
 //    color: "#21301f"
 
-    Text1 {
-        id: backend
-    }
-
     RowLayout {
         id: rlayout
         anchors.fill: parent
@@ -49,28 +45,36 @@ ApplicationWindow {
         }
 
         ListView {
+            id: logDataListView
             Layout.fillWidth: true
             Layout.fillHeight: true
             Layout.minimumWidth:400
             Layout.preferredWidth:400
             Layout.topMargin:4
             Layout.rightMargin:4
+            spacing: -1
 
             clip: true
 
-            model: ListModel {
-                ListElement {
-                    done: true
-                    desc: "Test Desc"
-                }
+            model: LogDataQStringListViewModel
+
+            onCountChanged: {
+                console.log("Count Changed!");
+                logDataListView.positionViewAtEnd();
             }
 
-            delegate: RowLayout {
+            delegate: Rectangle {
                 width: parent.width
+                height: 25
+                border.width:1
+                border.color: "#000000"
 
-                CheckBox {}
-                TextField {
-                    Layout.fillWidth: true
+                Layout.fillWidth: true
+                Layout.fillHeight: true
+
+                Text {
+                    padding: 4
+                    text: display
                 }
             }
         }

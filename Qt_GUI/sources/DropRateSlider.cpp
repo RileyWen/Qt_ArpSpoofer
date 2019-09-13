@@ -1,4 +1,4 @@
-#include "Qt_GUI/headers/backend.h"
+#include "Qt_GUI/headers/DropRateSlider.h"
 
 Text1::Text1(QObject *parent) :
         QObject(parent) {
